@@ -111,12 +111,12 @@ function TitleClouds() {
   );
 }
 
-function MainElement() {
+function StaticMainElements() {
   return (
-    <div className={styles.MainElement}>
+    <div className={styles.staticMainElements}>
       <Image
-        src="/MainElement.svg"
-        alt=" Main Element"
+        src="/StaticMainElements.svg"
+        alt="Static Main Elements"
         fill
         priority
       />
@@ -229,62 +229,9 @@ function ElementBaseClouds() {
   );
 }
 
-function Uppercloud() {
-  return (
-    <div className={styles.uppercloud}>
-      <Image
-        src="/Uppercloud.svg"
-        alt="Upper Cloud"
-        fill
-        priority
-      />
-    </div>
-  );
-}
-
-function FallingPeople1({ isFalling }: { isFalling: boolean }) {
-  return (
-    <div className={`${styles.fallingPeople1} ${isFalling ? styles.falling : ''}`}>
-      <Image
-        src="/fallingPeople1.svg"
-        alt="Falling People 1"
-        fill
-        priority
-      />
-    </div>
-  );
-}
-
-function FallingPeople2({ isFalling }: { isFalling: boolean }) {
-  return (
-    <div className={`${styles.fallingPeople2} ${isFalling ? styles.falling : ''}`}>
-      <Image
-        src="/fallingPeople2.svg"
-        alt="Falling People 2"
-        fill
-        priority
-      />
-    </div>
-  );
-}
-
-function PurpleClouds() {
-  return (
-    <div className={styles.purpleClouds}>
-      <Image
-        src="/PurpleClouds.svg"
-        alt="Purple Clouds"
-        fill
-        priority
-      />
-    </div>
-  );
-}
-
 export default function FrameOne() {
   const [mouseX, setMouseX] = useState(0);
   const [parallaxOffset, setParallaxOffset] = useState(0);
-  const [isFalling, setIsFalling] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -293,23 +240,9 @@ export default function FrameOne() {
       setParallaxOffset(offset);
     };
 
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const triggerPoint = window.innerHeight * 0.3; // Trigger when scrolled 30% of viewport
-      
-      if (scrollY > triggerPoint && !isFalling) {
-        setIsFalling(true);
-      }
-    };
-
     window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("scroll", handleScroll);
-    
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [isFalling]);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
 
   return (
     <section className={styles.frame}>
@@ -322,17 +255,13 @@ export default function FrameOne() {
       <GeomatricalCircle />
       <Title />
       <TitleClouds />
-      <MainElement />
+      <StaticMainElements />
       <Babbage />
       <Union />
       <WaterMillRotating />
       <WindWheel />
       <Water />
       <ElementBaseClouds />
-      <Uppercloud />
-      <FallingPeople1 isFalling={isFalling} />
-      <FallingPeople2 isFalling={isFalling} />
-      <PurpleClouds />
     </section>
   );
 }

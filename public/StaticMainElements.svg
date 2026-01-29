@@ -20,15 +20,7 @@
 <rect x="1320.84" y="43.3184" width="335" height="47" fill="white" stroke="#F4A27E" stroke-width="2"/>
 <path d="M1301.34 89.8184V44.3184H1298.84V93.3184L1320.34 91.3184V88.3184L1301.34 89.8184Z" fill="white" stroke="#F4A27E" stroke-width="2"/>
 <rect x="1485.34" y="34.3184" width="8" height="63" fill="white" stroke="#F4A27E" stroke-width="2"/>
-<path
-  d="M1545.34 106.818V92.3184H1600.34V106.818H1584.84V290.318H1558.34V106.818H1545.34Z"
-  fill="white"
-  stroke="#F4A27E"
-  stroke-width="2"
-  transform="scale(1, 1.5)"
-  transform-origin="center"
-/>
-
+<path d="M1545.34 106.818V92.3184H1600.34V106.818H1584.84V290.318H1558.34V106.818H1545.34Z" fill="white" stroke="#F4A27E" stroke-width="2"/>
 <circle cx="1284.34" cy="319.818" r="2" stroke="#F4A27E"/>
 <circle cx="1264.34" cy="316.818" r="2" stroke="#F4A27E"/>
 <circle cx="1335.58" cy="239.364" r="2" transform="rotate(57.2753 1335.58 239.364)" stroke="#F4A27E"/>
