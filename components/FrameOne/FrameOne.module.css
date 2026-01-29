@@ -1,0 +1,410 @@
+
+/* Main Frame Styles */
+.frame {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Navbar Styles */
+.navbarWrapper {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  width: 100%;
+  max-width: 60%;
+  padding: 0 0px;
+}
+
+.navbarContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 2px 32px;
+  background: rgba(80, 40, 80, 0.2);
+  border-radius: 50px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.navbarLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbarLinks {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.navbarLinks a {
+  color: #F4A27E;
+  text-decoration: none;
+  font-size: 25px;
+  font-family: Bruno Ace SC;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.navbarLinks a:hover {
+  color: #ffb07a;
+}
+
+.navbarCta {
+  background: linear-gradient(135deg, #ffb07a 0%, #F4A27E 100%);
+  border: none;
+  border-radius: 50px;
+  padding: 15px 24px;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 140, 160, 0.4);
+  white-space: nowrap;
+}
+
+.navbarCta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 140, 160, 0.6);
+}
+
+/* Top Hour Glass Styles */
+.topHourGlass {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 260px;
+  z-index: 300;
+  pointer-events: none;
+}
+
+.topHourGlass :global(img) {
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* Title Styles */
+.title {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 130px;
+  z-index: 320;
+  pointer-events: none;
+}
+
+/* Title Clouds Styles */
+.titleClouds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 280;
+}
+
+.titleCloudMiddle {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(160px, 30vw, 260px);
+  height: clamp(80px, 15vh, 130px);
+  z-index: 285;
+  pointer-events: none;
+}
+
+.titleCloudLeft {
+  position: absolute;
+  top: clamp(80px, 12vh, 120px);
+  left: 20%;
+  width: clamp(100px, 15vw, 150px);
+  height: clamp(50px, 8vh, 80px);
+  z-index: 285;
+  pointer-events: none;
+}
+
+.titleCloudRight {
+  position: absolute;
+  top: 10%;
+  right: 20%;
+   width: clamp(160px, 30vw, 260px);
+  height: clamp(50px, 8vh, 80px);
+  z-index: 285;
+  pointer-events: none;
+}
+
+@media (max-width: 480px) {
+  .titleCloudLeft,
+  .titleCloudRight {
+    display: none;
+  }
+}
+
+/* Static Main Elements Styles */
+.staticMainElements {
+  position: absolute;
+  top: 250px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1100px;
+  height: 400px;
+  z-index: 400;
+  pointer-events: none;
+}
+
+/* Babbage People Styles - Centered in StaticMainElements */
+.babbage {
+  position: absolute;
+  top: 320px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 550px;
+  height: 350px;
+  z-index: 320;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Union Water Wheel Base Styles */
+.union {
+  position: absolute;
+  top: 420px;
+  right: 16%;
+  width: 180px;
+  height: 180px;
+  z-index: 2;
+  pointer-events: none;
+
+  animation: union 8s linear infinite;
+}
+
+@keyframes union {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+/* Water Mill Rotating Styles */
+.waterMillRotating {
+  position: absolute;
+  top: 400px;
+  right: 15.5%;
+  width: 220px;
+  height: 220px;
+  z-index: 250;
+  pointer-events: none;
+  animation: rotateWaterMill 8s linear infinite;
+}
+
+@keyframes rotateWaterMill {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+/* Water Styles */
+.water {
+  position: absolute;
+  top: 330px;
+  right: 22%;
+  width: 230px;
+  height: 300px;
+  z-index: 314;
+  pointer-events: none;
+  animation: waterFlow 3s ease-in-out infinite;
+}
+
+@keyframes waterFlow {
+  0% {
+    transform: translateY(0px);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(15px);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 0.9;
+  }
+}
+
+/* Wind Wheel Styles */
+.windWheel {
+  position: absolute;
+  top: 230px;
+  left: 11%;
+  width: 140px;
+  height: 120px;
+  z-index: 315;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: spinWindWheel 3s linear infinite;
+}
+
+@keyframes spinWindWheel {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Stars Styles */
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.stars :global(img) {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Geometrical Circle Styles */
+.geomatricalCircle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 110;
+  pointer-events: none;
+}
+
+
+
+
+
+/* Babbage Styles */
+.babbage {
+  position: absolute;
+  bottom: 70px;
+  left: 45%;
+  transform: translateX(-50%);
+  width: 500px;
+  max-width: 52vw;
+  height: auto;
+  z-index: 260;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.babbage img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+
+
+@keyframes waterFlow {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(12px);
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Element Base Clouds Styles */
+.elementBaseClouds {
+  position: absolute;
+  bottom: -100px;
+  width: min(100%, 1400px);
+  left: 52%;
+  transform: translateX(-50%);
+  height: 400px;
+  margin-top: 100px;
+  z-index: 410;
+  pointer-events: none;
+}
+
+.elementBaseClouds :global(img) {
+  width: 100vw;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Left Border Styles */
+.leftBorder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 300vh;
+  min-height: 300vh;
+  z-index: 900;
+  pointer-events: none;
+  opacity: 1;
+}
+
+.leftBorder :global(img) {
+  object-fit: cover;
+  object-position: left center;
+  height: 100% !important;
+  width: 100% !important;
+}
+
+/* Right Border Styles */
+.rightBorder {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 300vh;
+  min-height: 300vh;
+  z-index: 900;
+  pointer-events: none;
+  opacity: 1;
+}
+
+.rightBorder :global(img) {
+  object-fit: cover;
+  object-position: right center;
+  height: 100% !important;
+  width: 100% !important;
+}
