@@ -3,7 +3,8 @@
 .frame {
   position: relative;
   height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: visible;
 }
 
 /* Navbar Styles */
@@ -155,7 +156,7 @@
 }
 
 /* Static Main Elements Styles */
-.staticMainElements {
+.MainElement {
   position: absolute;
   top: 250px;
   left: 50%;
@@ -365,6 +366,89 @@
 
 .elementBaseClouds :global(img) {
   width: 100vw;
+  height: auto;
+  object-fit: contain;
+}
+
+.uppercloud {
+  position: absolute;
+  bottom: -90%;
+  width: min(100%, 2000px);
+  left: 50%;
+  transform: translateX(-50%);
+  height: 700px;
+  margin-top: 100px;
+  z-index: 500;
+  pointer-events: none;
+}
+
+.uppercloud :global(img) {
+  width: 100vw;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Falling People 1 Styles - Behind Uppercloud, scroll-triggered */
+.fallingPeople1 {
+  position: absolute;
+  bottom: -50%;
+  left: 25%;
+  width: 300px;
+  height: 400px;
+  z-index: 480;
+  pointer-events: none;
+  transform: translateY(-200px);
+  transition: transform 0.8s ease-out;
+}
+
+.fallingPeople1 :global(img) {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Falling People 2 Styles - Behind Uppercloud, scroll-triggered */
+.fallingPeople2 {
+  position: absolute;
+  bottom: -55%;
+  right: 35%;
+  width: 280px;
+  height: 380px;
+  z-index: 475;
+  pointer-events: none;
+  transform: translateY(-250px);
+  transition: transform 1s ease-out;
+}
+
+.fallingPeople2 :global(img) {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Scroll-triggered falling animation */
+.fallingPeople1.falling {
+  transform: translateY(0px);
+}
+
+.fallingPeople2.falling {
+  transform: translateY(0px);
+}
+
+/* Purple Clouds Styles - Below Falling People */
+.purpleClouds {
+  position: absolute;
+  bottom: -150%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(100%, 2000px);
+  height: 750px;
+  z-index: 485;
+  pointer-events: none;
+}
+
+.purpleClouds :global(img) {
+  width: 100%;
   height: auto;
   object-fit: contain;
 }
