@@ -3,9 +3,14 @@
 .frame {
   position: relative;
   height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: visible;
 }
-
+.HeroSection{
+  border:4px solid yellow;
+  height: 100vh !important;
+  width:100% !important;
+}
 /* Navbar Styles */
 .navbarWrapper {
   position: fixed;
@@ -155,12 +160,12 @@
 }
 
 /* Static Main Elements Styles */
-.staticMainElements {
+.MainElement {
   position: absolute;
-  top: 250px;
+  top: 50%;
   left: 50%;
   transform: translateX(-50%);
-  width: 1100px;
+  width: 80vw;
   height: 400px;
   z-index: 400;
   pointer-events: none;
@@ -206,8 +211,8 @@
 /* Water Mill Rotating Styles */
 .waterMillRotating {
   position: absolute;
-  top: 400px;
-  right: 15.5%;
+  top: 550px;
+  right: 19%;
   width: 220px;
   height: 220px;
   z-index: 250;
@@ -227,9 +232,9 @@
 /* Water Styles */
 .water {
   position: absolute;
-  top: 330px;
-  right: 22%;
-  width: 230px;
+  top: 60%;
+  right: 25%;
+  width: 210px;
   height: 300px;
   z-index: 314;
   pointer-events: none;
@@ -254,14 +259,15 @@
 /* Wind Wheel Styles */
 .windWheel {
   position: absolute;
-  top: 230px;
-  left: 11%;
+  top: 47%;
+  left: 12%;
   width: 140px;
   height: 120px;
   z-index: 315;
   pointer-events: none;
   display: flex;
   align-items: center;
+  scale: 2;
   justify-content: center;
   animation: spinWindWheel 3s linear infinite;
 }
@@ -283,8 +289,19 @@
   right: 0;
   width: 100%;
   height: 100vh;
-  z-index: 100;
+  z-index: 400;
   pointer-events: none;
+}
+@keyframes blink {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
 }
 
 .stars :global(img) {
@@ -292,11 +309,13 @@
   object-position: center;
   width: 100%;
   height: 100%;
+  animation: blink 3s infinite ease-in-out;
 }
+
 
 /* Geometrical Circle Styles */
 .geomatricalCircle {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -305,10 +324,6 @@
   z-index: 110;
   pointer-events: none;
 }
-
-
-
-
 
 /* Babbage Styles */
 .babbage {
@@ -353,18 +368,108 @@
 /* Element Base Clouds Styles */
 .elementBaseClouds {
   position: absolute;
-  bottom: -100px;
+  bottom: -14%;
+  left: 5%;
   width: min(100%, 1400px);
-  left: 52%;
-  transform: translateX(-50%);
   height: 400px;
   margin-top: 100px;
   z-index: 410;
+  scale: 1.5;
   pointer-events: none;
 }
 
 .elementBaseClouds :global(img) {
   width: 100vw;
+  height: auto;
+  object-fit: contain;
+}
+
+.uppercloud {
+  position: absolute;
+  bottom: -90%;
+  width: min(100%, 2000px);
+  left: 50%;
+  transform: translateX(-50%);
+  height: 700px;
+  margin-top: 100px;
+  z-index: 500;
+  pointer-events: none;
+}
+
+.uppercloud :global(img) {
+  width: 100vw;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Falling People 1 Styles - Visible positioning */
+.fallingPeople1 {
+  position: absolute;
+  bottom: -600px;
+  left: 25%;
+  width: 300px;
+  height: 400px;
+  z-index: 480;
+  pointer-events: none;
+  opacity: 1;
+}
+
+.fallingPeople1 :global(img) {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Falling People 2 Styles - Visible positioning */
+.fallingPeople2 {
+  position: absolute;
+  bottom: -50px;
+  right: 25%;
+  width: 280px;
+  height: 380px;
+  z-index: 475;
+  pointer-events: none;
+  opacity: 1;
+}
+
+.fallingPeople2 :global(img) {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Purple Clouds Styles - Below Falling People */
+.purpleClouds {
+  position: absolute;
+  bottom: -150%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(100%, 2000px);
+  height: 750px;
+  z-index: 485;
+  pointer-events: none;
+}
+
+.purpleClouds :global(img) {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Base Hour Glass Styles - Bottom of page */
+.baseHourGlass {
+  position: absolute;
+  bottom: -200%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(100%, 1800px);
+  height: 600px;
+  z-index: 480;
+  pointer-events: none;
+}
+
+.baseHourGlass :global(img) {
+  width: 100%;
   height: auto;
   object-fit: contain;
 }

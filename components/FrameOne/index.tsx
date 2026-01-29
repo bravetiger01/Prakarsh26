@@ -111,12 +111,12 @@ function TitleClouds() {
   );
 }
 
-function StaticMainElements() {
+function MainElement() {
   return (
-    <div className={styles.staticMainElements}>
+    <div className={styles.MainElement}>
       <Image
-        src="/StaticMainElements.svg"
-        alt="Static Main Elements"
+        src="/MainElement.svg"
+        alt=" Main Element"
         fill
         priority
       />
@@ -229,6 +229,71 @@ function ElementBaseClouds() {
   );
 }
 
+function Uppercloud() {
+  return (
+    <div className={styles.uppercloud}>
+      <Image
+        src="/Uppercloud.svg"
+        alt="Upper Cloud"
+        fill
+        priority
+      />
+    </div>
+  );
+}
+
+function FallingPeople1() {
+  return (
+    <div className={styles.fallingPeople1}>
+      <Image
+        src="/fallingPeople1.svg"
+        alt="Falling People 1"
+        fill
+        priority
+      />
+    </div>
+  );
+}
+
+function FallingPeople2() {
+  return (
+    <div className={styles.fallingPeople2}>
+      <Image
+        src="/fallingPeople2.svg"
+        alt="Falling People 2"
+        fill
+        priority
+      />
+    </div>
+  );
+}
+
+function PurpleClouds() {
+  return (
+    <div className={styles.purpleClouds}>
+      <Image
+        src="/PurpleClouds.svg"
+        alt="Purple Clouds"
+        fill
+        priority
+      />
+    </div>
+  );
+}
+
+function BaseHourGlass() {
+  return (
+    <div className={styles.baseHourGlass}>
+      <Image
+        src="/BaseHourGlass.svg"
+        alt="Base Hour Glass"
+        fill
+        priority
+      />
+    </div>
+  );
+}
+
 export default function FrameOne() {
   const [mouseX, setMouseX] = useState(0);
   const [parallaxOffset, setParallaxOffset] = useState(0);
@@ -236,32 +301,55 @@ export default function FrameOne() {
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       const centerX = window.innerWidth / 2;
-      const offset = (e.clientX - centerX) / 10; // Adjust divisor for sensitivity
+      const offset = (e.clientX - centerX) / 10;
       setParallaxOffset(offset);
     };
 
     window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
   }, []);
 
   return (
     <section className={styles.frame}>
-      <TopHourGlass />
-      <Navbar />
-      <LeftBorder />
-      <RightBorder />
+      <div className="HeroSection">
 
-      <Stars />
-      <GeomatricalCircle />
-      <Title />
-      <TitleClouds />
-      <StaticMainElements />
-      <Babbage />
-      <Union />
-      <WaterMillRotating />
-      <WindWheel />
-      <Water />
-      <ElementBaseClouds />
+        <TopHourGlass />
+        <Navbar />
+        <LeftBorder />
+        <RightBorder />
+
+        <Stars />
+        <GeomatricalCircle />
+        <Title />
+        <TitleClouds />
+        <MainElement />
+        <Babbage />
+        <Union />
+        <WaterMillRotating />
+        <WindWheel />
+        <Water />
+        <ElementBaseClouds />
+        <div className="bg" style={{
+          position: 'absolute',
+          background: 'linear-gradient(to bottom,#3C2A56,#F4A27E)',
+          margin: 0,
+          padding: 0,
+          left: 0,
+          top: 0,
+          height: '100vh',
+          width: '100%',
+          border: '4px solid yellow',
+          zIndex: 100,
+        }}></div>
+      </div>
+      <Uppercloud />
+      <FallingPeople1 />
+      <FallingPeople2 />
+      <PurpleClouds />
+      <BaseHourGlass />
     </section>
   );
 }
